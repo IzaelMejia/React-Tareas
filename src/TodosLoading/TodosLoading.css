@@ -1,0 +1,57 @@
+.containerEsqueleto {
+    display: flex;
+    background-color: rgba(231, 227, 227, 0.539);
+    border-radius: 8px;
+    margin-top: 15px;
+    width: 60%;
+    height: 60px;
+    align-items: center;
+    animation: colorChange 2s infinite alternate; /* Agregamos la animación al contenedor */
+}
+
+@keyframes colorChange {
+    from {
+        background-color: rgba(231, 230, 230, 0.753);
+    }
+    to {
+        background-color: rgba(199, 199, 199, 0.743);
+    }
+}
+.iconEsqueleto {
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: rgba(183, 182, 182, 0.968);
+    width: 26px;
+    border-radius: 40px;
+    height: 26px;
+    animation: iconScale 1s infinite alternate;
+}
+@keyframes iconScale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.4);
+    }
+}
+
+.iconoEsqueletoBorrar {
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: rgba(183, 182, 182, 0.968);
+    width: 18px;
+    border-radius: 40px;
+    height: 28px;
+    margin-right: 10px;
+    margin-left: auto;
+    animation: iconOpacity 1s infinite alternate;
+}
+
+@keyframes iconOpacity {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.4);
+    }
+}

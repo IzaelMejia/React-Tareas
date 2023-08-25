@@ -1,0 +1,65 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.322);
+}
+label{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #70337b;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    resize: vertical; /* Permite ajustar la altura verticalmente */
+    resize: none;
+}
+
+textarea:focus {
+    box-shadow: 0 4px 8px #70337b;
+    transition: border-color 0.2s ease-in-out; /* Cambia el color del borde al enfocar el textarea */
+    outline: none; /* Elimina el contorno predeterminado en algunos navegadores */
+}
+
+.containerBotones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center; 
+    
+}
+
+.Form-Buttons--cancelar,
+.Form-Buttons--AgregarTarea {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Form-Buttons--cancelar {
+    background-color: #ccc;
+    color: #333;
+}
+
+.Form-Buttons--AgregarTarea {
+    background-color: #70337b;
+    color: #fff;
+}

@@ -1,0 +1,55 @@
+
+
+li{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 18px;
+    align-items: center;
+    width: 60%;
+    
+    
+}
+
+li:hover {
+    box-shadow: 2px 4px 12px #9ca0aa; /* Agregar una sombra suave */
+}
+
+
+.iconoNormal{
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.iconoListo{
+    color: green;
+}
+
+.textoTarea{
+    margin-left: 10px;
+    
+}
+
+.textoTareaHecha{
+    text-decoration: line-through;
+}
+
+.textoTarea:first-child {
+    text-decoration: underline;
+}
+
+.tareaBorrar {
+    font-weight: 700;
+    font-size: 22px;
+    transition: cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    margin-left: auto; /* Agregamos esta propiedad para mover el elemento a la parte derecha */
+    padding-right: 10px;
+} 
+
+.tareaBorrar:hover{
+    color: red;
+}

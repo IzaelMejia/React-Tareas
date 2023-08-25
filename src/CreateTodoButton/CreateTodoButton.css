@@ -1,0 +1,18 @@
+
+.botonTarea{
+    margin-top: 30px;
+    width: 10%;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #70337b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+  }
+.botonTarea:hover {
+      background-color: #a60398;
+    }
