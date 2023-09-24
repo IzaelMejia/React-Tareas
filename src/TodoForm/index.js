@@ -1,13 +1,7 @@
 import React from 'react'
 import "./TodoForm.css"
-import {TodoContext} from "../../TodoContext"
 
-function TodoForm() {
-  //contexto
-  const {
-    setOpenModal,
-    addTarea
-  } =  React.useContext(TodoContext)
+function TodoForm({setOpenModal,addTarea}) {
 
   //crear estado local 
   const [newTareaValue,setNewTareaValue] = React.useState("")

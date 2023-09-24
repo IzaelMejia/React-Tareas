@@ -1,9 +1,8 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
-const TodoContext=React.createContext()
 
-function TodoProvider({children}){
+function useTodos(){
     //Actualizar las tareas 
   const {
     item:todos, 
@@ -65,26 +64,21 @@ function TodoProvider({children}){
     saveTodos(newTodos)
   }
 
-
-    return(
-        <TodoContext.Provider value={{
-            loading,
-            error,
-            completedTareas,
-            noCompletedTareas,
-            searchValue,
-            setSearchValue,
-            searchedTodos,
-            completarTarea,
-            eliminarTarea,
-            openModal,
-            setOpenModal,
-            addTarea
-        }}>
-            {children}
-        </TodoContext.Provider>
-    )
+    return{
+      loading,
+      error,
+      completedTareas,
+      noCompletedTareas,
+      searchValue,
+      setSearchValue,
+      searchedTodos,
+      completarTarea,
+      eliminarTarea,
+      openModal,
+      setOpenModal,
+      addTarea
+    }
 }
 
 
-export {TodoContext,TodoProvider}
+export { useTodos}
