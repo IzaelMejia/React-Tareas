@@ -1,13 +1,8 @@
 import React from 'react'
 import "./TodoFilter.css"
 import { AiOutlineSearch } from "react-icons/ai";
-import { TodoContext } from '../TodoContext';
 
-function TodoFilter() {
-  const {
-    searchValue,
-    setSearchValue
-  }=React.useContext(TodoContext)
+function TodoFilter({searchValue,setSearchValue}) {
   
   return (
     <div className="searchContainer">
