@@ -21,3 +21,7 @@
     color: #70337b;
     cursor: pointer;
 }
+
+.inputFilter:disabled{
+    opacity: 30%;
+}

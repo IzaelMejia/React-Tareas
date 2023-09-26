@@ -16,3 +16,10 @@
 .botonTarea:hover {
       background-color: #a60398;
     }
+
+
+.botonTarea:disabled{
+  opacity: 30%;
+}
+
+

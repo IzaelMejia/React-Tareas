@@ -1,4 +1,4 @@
-h1{ 
+.TodoCounter{ 
     font-size: 40px;
     text-align: center;
     margin:0;
@@ -8,3 +8,9 @@ h1{
     color: transparent;
     
 }
+
+.TodoCounter--loading{
+    opacity: 30%;
+}
+
+

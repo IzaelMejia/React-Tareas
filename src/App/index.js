@@ -47,11 +47,12 @@ function App() {
             </div>
                 <div className="containerPedirDatos">
                     {/*  */}
-                    <TodoHeader>
+                    <TodoHeader loading={loading}>
                         <TodoCounter
                             completedTareas={completedTareas}
                             noCompletedTareas={noCompletedTareas}
                         />
+                       
                         <TodoFilter
                             searchValue={searchValue}
                             setSearchValue={setSearchValue}
@@ -99,12 +100,8 @@ function App() {
                                 onDelete={()=>eliminarTarea(todo.text)}
                             />
                         )}
-
-                          
                         </TodoList>
 
-                    
-                    
                     {/* <TodoList>
                          {loading && (
                             <>
@@ -132,6 +129,7 @@ function App() {
 
                     <CreateTodoButton
                         setOpenModal={setOpenModal}
+                        loading={loading}
                     />
                 </div>
         </React.Fragment>
