@@ -12,6 +12,8 @@ import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import {TodoHeader} from '../TodoHeader';
 import { useTodos } from './useTodos';
+import { EmptySearchResults } from './EmptySearchResults';
+
 
 function App() {
     const{
@@ -55,20 +57,66 @@ function App() {
                             setSearchValue={setSearchValue}
                         />
                     </TodoHeader>
-                    
-                    <TodoList>
-                        {loading && (
+
+                    <TodoList
+                        error={error}
+                        loading={loading}
+                        searchedTodos={searchedTodos}
+                        completedTareas={completedTareas}
+                        searchText={searchValue}
+                        onError={() => <TodosError/>}
+                        
+                        onLoading={() =>
                             <>
                                 <TodosLoading />
                                 <TodosLoading />
                                 <TodosLoading />
                                 <TodosLoading />
                             </>
+                        }
+                        onEmptyTodos={() => <EmptyTodos/>}
+                        onEmptySearchResults={(searchText) => <EmptySearchResults searchText={searchText}/>}
+
+                        // --------------  ESTA ES UNA RENDER PROP  --------------
+                        // render={todo => (
+                        //     <TodoItem
+                        //         key={todo.text}
+                        //         text={todo.text}
+                        //         completed={todo.completed}
+                        //         onComplete={()=>completarTarea(todo.text)} //(todo.text) -P asa el texto de esta tarea para que se marque como completada en el estado".
+                        //         onDelete={()=>eliminarTarea(todo.text)}
+                        //     />
+                        // )}
+                        
+                        >
+                            {/*  -----------  Render FUNCTION ----------- */}
+                            {todo => (
+                            <TodoItem
+                                key={todo.text}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onComplete={()=>completarTarea(todo.text)} //(todo.text) -P asa el texto de esta tarea para que se marque como completada en el estado".
+                                onDelete={()=>eliminarTarea(todo.text)}
+                            />
                         )}
 
-                        {error && <TodosError/> }
-                        {/* Si loading es "false", o sea que no esta cargando */}
-                        {/* Y el array no tiene datos  */}
+                          
+                        </TodoList>
+
+                    
+                    
+                    {/* <TodoList>
+                         {loading && (
+                            <>
+                                <TodosLoading />
+                                <TodosLoading />
+                                <TodosLoading />
+                                <TodosLoading />
+                            </>
+                        )} 
+             Si loading es "false", o sea que no esta cargando  Y el array no tiene datos 
+                         {error && <TodosError/> }
+                        {loading && <TodosLoading />}
                         {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
 
                         {searchedTodos.map(todo => (
@@ -79,8 +127,8 @@ function App() {
                                 onComplete={()=>completarTarea(todo.text)} //(todo.text) -P asa el texto de esta tarea para que se marque como completada en el estado".
                                 onDelete={()=>eliminarTarea(todo.text)}
                             />
-                        ))}
-                    </TodoList>
+                        ))} 
+                    </TodoList> */}
 
                     <CreateTodoButton
                         setOpenModal={setOpenModal}

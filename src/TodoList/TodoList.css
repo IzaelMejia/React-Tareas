@@ -1,5 +1,5 @@
 
-ul{
+.TodoListContainer{
     list-style-type: none; /* Quita los marcadores/bolitas */
     padding: 0; /* Elimina el padding predeterminado */
     margin: 0; /* Elimina el margen predeterminado */

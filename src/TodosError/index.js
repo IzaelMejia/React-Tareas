@@ -4,7 +4,7 @@ import "./TodosError.css"
 
 function TodosError() {
   return (
-    <p>Primer TODO </p>
+    <p>Error de carga TodosError </p>
   )
 }
 
