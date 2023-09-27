@@ -5,6 +5,7 @@ function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = React.useState(initialValue); //estado de array vacio 
   const [loading, setLoading] = React.useState(true); // true para que sepa que esta cargando 
   const [error, setError] = React.useState(false);  
+  const [sincronized, setSincronized] = React.useState(true);  //saber si estamos sincronizado con pestañas de navegador o no 
 
   
     //Estado de carga 
@@ -26,12 +27,13 @@ function useLocalStorage(itemName, initialValue) {
           }
           //Si el efecto corre corectamente . Llamas el actuzaliazador 
         setLoading(false)  //le damos false , significa que ya no carga 
+        setSincronized(true)
       } catch(error){
         setLoading(false)
         setError(true)
       }
-      }, 2000) 
-    }, [itemName, initialValue])
+      }, 3000) 
+    }, [itemName, initialValue,sincronized])
     
 
     // Define una función 'saveItem' para actualizar el valor en el almacenamiento local y el estado
@@ -41,12 +43,21 @@ function useLocalStorage(itemName, initialValue) {
     // Actualiza el estado 'item' con el nuevo valor
     setItem(newItem);
   }
+
+  const sincronizeItem=()=>{
+    setLoading(true)
+    setSincronized(false)
+  }
     // Devuelve un arreglo con el estado 'item' actual y la función 'saveItem'
     return {
       item,
       saveItem,
       loading , 
-      error}
+      error,
+      sincronizeItem
+    }
+
+
   }
 
   export {useLocalStorage} 

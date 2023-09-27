@@ -7,6 +7,7 @@ function useTodos(){
   const {
     item:todos, 
     saveItem:saveTodos,
+    sincronizeItem:sincronizeTodos,
     loading,
     error
   
@@ -76,7 +77,8 @@ function useTodos(){
       eliminarTarea,
       openModal,
       setOpenModal,
-      addTarea
+      addTarea,
+      sincronizeTodos
     }
 }
 

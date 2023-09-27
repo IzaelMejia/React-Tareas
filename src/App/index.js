@@ -13,6 +13,8 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import {TodoHeader} from '../TodoHeader';
 import { useTodos } from './useTodos';
 import { EmptySearchResults } from './EmptySearchResults';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
         setSearchValue,
         setOpenModal,
         addTarea,
+        sincronizeTodos
         
       } = useTodos();
     
@@ -101,6 +104,9 @@ function App() {
                             />
                         )}
                         </TodoList>
+                        <ChangeAlertWithStorageListener
+                            sincronize={sincronizeTodos}
+                        />
 
                     {/* <TodoList>
                          {loading && (
@@ -131,6 +137,7 @@ function App() {
                         setOpenModal={setOpenModal}
                         loading={loading}
                     />
+                    
                 </div>
         </React.Fragment>
     );

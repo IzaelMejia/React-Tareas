@@ -21,7 +21,7 @@ const renderFunc = props.children || props.render;
       {/* Mapea cada elemento en props.searchedTodos utilizando props.render() para
        renderizar cada uno de ellos. Esto es comúnmente utilizado para renderizar una lista de elementos. */}
       {/* {props.searchedTodos.map(props.render)} Enviamos una render prop */}
-      {props.searchedTodos.map(renderFunc)} {/* Enviamos una render función */}
+      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
 
 
       <ul>
